@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Task_19_GesturesRecognizers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banana" translatesAutoresizingMaskIntoConstraints="NO" id="VZo-cN-3II">
+                                <rect key="frame" x="187" y="144" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="1oC-IC-7Qk"/>
+                                    <constraint firstAttribute="height" constant="40" id="rEe-rr-IBW"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monkey" translatesAutoresizingMaskIntoConstraints="NO" id="aEZ-86-onj">
+                                <rect key="frame" x="314" y="662" width="100" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="UGG-ov-eij"/>
+                                    <constraint firstAttribute="width" constant="100" id="zsm-Wm-WVd"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VZo-cN-3II" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A5a-t9-bEp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aEZ-86-onj" secondAttribute="bottom" id="GPx-AX-hTq"/>
+                            <constraint firstItem="VZo-cN-3II" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="eVZ-Co-04k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aEZ-86-onj" secondAttribute="trailing" id="hvq-5x-XZt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="banana" destination="VZo-cN-3II" id="Bws-9k-7e0"/>
+                        <outlet property="bananaTopArchor" destination="eVZ-Co-04k" id="dTQ-Xe-f8f"/>
+                        <outlet property="monkey" destination="aEZ-86-onj" id="Yec-NN-N88"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="129"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="banana" width="191" height="125"/>
+        <image name="monkey" width="150" height="150"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
