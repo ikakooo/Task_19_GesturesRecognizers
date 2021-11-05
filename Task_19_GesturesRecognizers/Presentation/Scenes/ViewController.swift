@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import ScreenTime
 
 class MainViewController: UIViewController {
     
     @IBOutlet weak var bananaTopArchor: NSLayoutConstraint!
-    @IBOutlet weak private var banana: UIImageView! {
+    @IBOutlet weak private var banana: UIButton! {
         didSet {
             banana.isUserInteractionEnabled = true
         }
@@ -26,18 +27,49 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
        // setupSwipeGesture()
         setupPanGestureForMonkey()
-        
+       // setupPanGestureForBanana()
        
     }
+    @IBAction func onBananaClick(_ sender: UIButton) {
+        let dsfsd = banana.frame.origin.x
+       // for i in Int(banana.frame.origin.x)...Int(UIScreen.main.bounds.height){
+           // sleep(1)
+            //DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(40), execute: {
+               // print("done")
+               /// self.bananaTopArchor.constant = CGFloat(i) - self.banana.frame.origin.x
+                UIView.animate(withDuration: 2) {
+                    self.banana.transform = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height - self.monkey.frame.origin.x)
+                    
+                }
+//        UIView.animate(withDuration: 2) {
+//            self.banana.transform = CGAffineTransform(rotationAngle: .pi)
+//        }
+           // })
+//            do {
+//                sleep(1)
+//            }
+            //Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(callbackk), userInfo: nil, repeats: false)
+       // }
+//        let equalitiX = banana.frame.origin.x - monkey.frame.origin.x
+//        if equalitiX
 
-    private func setupPanGestureForBanana() {
-        let fallDown = UISwipeGestureRecognizer(
-            target: self,
-            action: #selector(handlefallDown(_:))
-        )
-        
-        banana.addGestureRecognizer(fallDown)
     }
+    
+    
+    @objc private func callbackk() {
+        print("done")
+    }
+
+   
+    
+//    private func setupPanGestureForBanana() {
+//        let fallDown = UISwipeGestureRecognizer(
+//            target: self,
+//            action: #selector(handleDirectedPanGesture(_:))
+//        )
+//
+//        banana.addGestureRecognizer(fallDown)
+//    }
     
     private func setupPanGestureForMonkey() {
         let panGesture = UIPanGestureRecognizer(
@@ -77,8 +109,19 @@ private extension MainViewController {
 //        }
     }
     
-    @objc private func handlefallDown(_ gesture: UISwipeGestureRecognizer) {
-//        UIView.animateWithDuration(10, delay: 0, options: [UIViewAnimationOptions.CurveEaseIn], animations: {
-//            banana.center = CGPoint(x: banana.center.x, y: 300)
-//        }, completion: nil)
-    }}
+//    @objc private func handleDirectedPanGesture(_ gesture: DirectedPanGestureRecognizer) {
+//
+//        guard let direction = gesture.direction else { return }
+//
+//        switch direction {
+//        case .right:
+//            banana.transform = CGAffineTransform(translationX: 80, y: 0)
+//        case .left:
+//            banana.transform = CGAffineTransform(translationX: -80, y: 0)
+//        default:
+//            break
+//        }
+//    }
+    
+    
+}

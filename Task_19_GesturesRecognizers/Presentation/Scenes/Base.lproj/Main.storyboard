@@ -16,13 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banana" translatesAutoresizingMaskIntoConstraints="NO" id="VZo-cN-3II">
-                                <rect key="frame" x="187" y="144" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="1oC-IC-7Qk"/>
-                                    <constraint firstAttribute="height" constant="40" id="rEe-rr-IBW"/>
-                                </constraints>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monkey" translatesAutoresizingMaskIntoConstraints="NO" id="aEZ-86-onj">
                                 <rect key="frame" x="314" y="662" width="100" height="200"/>
                                 <constraints>
@@ -30,19 +23,31 @@
                                     <constraint firstAttribute="width" constant="100" id="zsm-Wm-WVd"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhT-Pq-WNG">
+                                <rect key="frame" x="187" y="144" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="lxM-xD-fZw"/>
+                                    <constraint firstAttribute="height" constant="40" id="ujR-dV-HHy"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="banana-Small"/>
+                                <connections>
+                                    <action selector="onBananaClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dLg-8O-9Bn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VZo-cN-3II" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A5a-t9-bEp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aEZ-86-onj" secondAttribute="bottom" id="GPx-AX-hTq"/>
-                            <constraint firstItem="VZo-cN-3II" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="eVZ-Co-04k"/>
+                            <constraint firstItem="dhT-Pq-WNG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RrW-GN-Yx2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aEZ-86-onj" secondAttribute="trailing" id="hvq-5x-XZt"/>
+                            <constraint firstItem="dhT-Pq-WNG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="muf-V0-gKz"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="banana" destination="VZo-cN-3II" id="Bws-9k-7e0"/>
-                        <outlet property="bananaTopArchor" destination="eVZ-Co-04k" id="dTQ-Xe-f8f"/>
+                        <outlet property="banana" destination="dhT-Pq-WNG" id="TDn-LZ-ub1"/>
+                        <outlet property="bananaTopArchor" destination="muf-V0-gKz" id="SJk-vy-Vr4"/>
                         <outlet property="monkey" destination="aEZ-86-onj" id="Yec-NN-N88"/>
                     </connections>
                 </viewController>
@@ -52,7 +57,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="banana" width="191" height="125"/>
+        <image name="banana-Small" width="40" height="40"/>
         <image name="monkey" width="150" height="150"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
